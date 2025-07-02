@@ -1,0 +1,48 @@
+<mat-sidenav-container fullscreen>
+
+    <mat-sidenav #sidenav mode="push">
+
+        <mat-toolbar >
+            <span>Menú</span>
+            <span class="spacer"></span>
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>chevron_left</mat-icon>
+            </button>
+
+        </mat-toolbar>
+
+        <mat-nav-list>
+            <!-- TODO: Implementar un menú de navegación más completo  -->
+            <!-- La idea es mostar los diferentes tipos de generos de noticias -->
+            <a routerLink="./home" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>label</mat-icon>
+                <span> Politica </span>
+            </a>
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-toolbar>
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        
+        <button mat-icon-button routerLink="./home">
+            MFNews
+        </button>
+
+        <span class="spacer"></span>
+
+
+        <button mat-button routerLink="./agregar" (click)="nuevaNoticia()">
+            <mat-icon>add</mat-icon>
+            Nueva Noticia
+        </button>
+    </mat-toolbar>
+
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-sidenav-container>
