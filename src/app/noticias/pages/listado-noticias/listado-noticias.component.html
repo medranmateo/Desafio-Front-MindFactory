@@ -2,7 +2,7 @@
     <div class="listado-noticias">
     
         <div class="principal">
-            <mat-card>
+            <mat-card (click)="verDetalle(principal?.id || 0)" >
                 <mat-card-header>
                     <mat-card-title> {{ principal?.titulo || ' ' }} </mat-card-title>
                 </mat-card-header>
@@ -17,7 +17,7 @@
     
         <div class="secundarias">
             <div *ngFor="let item of secundarias" class="noticia-tarjeta-secundaria">
-                <app-noticia-tarjeta [noticia]="item"></app-noticia-tarjeta>
+                <app-noticia-tarjeta [noticia]="item" (clickTarjeta)="verDetalle($event)"></app-noticia-tarjeta>
             </div>
         </div>
     
@@ -27,7 +27,7 @@
     
     <div class="resto-noticias">
         <div *ngFor="let item of restoNoticias" class="resto-noticias-item">
-            <app-noticia-tarjeta [noticia]="item"></app-noticia-tarjeta>
+            <app-noticia-tarjeta [noticia]="item" (clickTarjeta)="verDetalle($event)"></app-noticia-tarjeta>
         </div>
     </div>
 

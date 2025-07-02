@@ -80,7 +80,7 @@ export class NoticiasService {
 
   obtenerPorId(id: number): Observable<Noticia> {
     return new Observable<Noticia>(observer => {
-      const noticia = this.noticias.find(n => n.id === id);
+      const noticia = this.noticias.find(n => n.id == id);
       observer.next(noticia);
       observer.complete();
     });
@@ -107,7 +107,7 @@ export class NoticiasService {
     });
   }
 
-  
+
   actualizarNoticiaSinObservable(noticiaActualizada: Noticia) {
     const index = this.noticias.findIndex(n => n.id === noticiaActualizada.id);
     if (index !== -1) {

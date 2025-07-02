@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Noticia } from '../../interfaces/noticia.interface';
 import { NoticiasService } from '../../services/noticias.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-listado-noticias',
@@ -15,7 +16,11 @@ export class ListadoNoticiasComponent implements OnInit {
   secundarias: Noticia[] = [];
   restoNoticias: Noticia[] = [];
 
-  constructor(private noticiasService: NoticiasService) { }
+  constructor(
+    private noticiasService: NoticiasService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     
@@ -30,6 +35,14 @@ export class ListadoNoticiasComponent implements OnInit {
     
   }
 
+
+  verDetalle(id: number) {
+    if(id <= 0) {
+      return;
+    }
+    console.log('Ver detalle de la noticia con ID:', id);
+    this.router.navigate(['../noticia', id], { relativeTo: this.activatedRoute });
+}
 
 
 }

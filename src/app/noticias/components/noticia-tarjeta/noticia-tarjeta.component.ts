@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Noticia } from '../../interfaces/noticia.interface';
 
 @Component({
@@ -10,9 +10,16 @@ export class NoticiaTarjetaComponent implements OnInit {
 
   @Input() noticia!: Noticia;
 
-  constructor() { }
+  @Output() clickTarjeta = new EventEmitter<number>();
 
+  constructor() { }
+  
   ngOnInit(): void {
   }
+  
+  onClick() {
+    this.clickTarjeta.emit(this.noticia.id);
+  }
+
 
 }
