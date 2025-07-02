@@ -8,6 +8,7 @@ import { NoticiasRoutingModule } from './noticias-routing.module';
 import { ListadoNoticiasComponent } from './pages/listado-noticias/listado-noticias.component';
 import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 import { NoticiaTarjetaComponent } from './components/noticia-tarjeta/noticia-tarjeta.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -23,7 +24,8 @@ import { NoticiaTarjetaComponent } from './components/noticia-tarjeta/noticia-ta
   imports: [
     CommonModule,
     MatarialModule,
-    NoticiasRoutingModule
+    NoticiasRoutingModule,
+    FormsModule
   ]
 })
 export class NoticiasModule { }

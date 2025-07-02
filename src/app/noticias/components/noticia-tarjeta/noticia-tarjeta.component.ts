@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Noticia } from '../../interfaces/noticia.interface';
 
 @Component({
   selector: 'app-noticia-tarjeta',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./noticia-tarjeta.component.scss']
 })
 export class NoticiaTarjetaComponent implements OnInit {
+
+  @Input() noticia!: Noticia;
 
   constructor() { }
 

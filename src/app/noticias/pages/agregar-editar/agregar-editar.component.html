@@ -1,1 +1,52 @@
-<p>agregar-editar works!</p>
+<div class="agregar-editar">
+
+    <button mat-button routerLink="./home">
+        <mat-icon>home</mat-icon> Inicio
+    </button>
+
+    <h2 class="titulo"> 
+        {{ noticia.id ? 'Editar' : 'Agregar' }} Noticia
+    </h2>
+
+    <form class="noticia-form" #noticiaForm="ngForm" (ngSubmit)="guardarNoticia()">
+        <mat-form-field>
+            <mat-label>Título</mat-label>
+            <input matInput [(ngModel)]="noticia.titulo" name="titulo" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Subtítulo</mat-label>
+            <input matInput [(ngModel)]="noticia.subtitulo" name="subtitulo" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Contenido</mat-label>
+            <textarea matInput [(ngModel)]="noticia.contenido" name="contenido" required></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>URL de Imagen</mat-label>
+            <input matInput [(ngModel)]="noticia.imagenUrl" name="imagenUrl" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Autor</mat-label>
+            <input matInput [(ngModel)]="noticia.autor" name="autor" required>
+        </mat-form-field>  
+        
+        <mat-form-field>
+            <mat-label>Fecha</mat-label>
+            <input matInput [(ngModel)]="noticia.fecha" name="fecha" type="date" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Categoría</mat-label>
+            <input matInput [(ngModel)]="noticia.categoria" name="categoria" required>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit"> {{ noticia.id ? 'Actualizar' : 'Crear Noticia' }} </button>
+    </form>
+
+</div>
+
+

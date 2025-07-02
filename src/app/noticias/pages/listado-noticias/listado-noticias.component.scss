@@ -1,13 +1,33 @@
+.listado-noticias-container {
+    margin: 20px;
+}
+
 .listado-noticias {
     display: flex;
     justify-content: space-between;
-    margin: 15px;
 }
 
 .principal{
     width: 60%;
+    margin-left: 26px;
 }
 
 .secundarias{
     width: 25%;
+}
+
+.noticia-tarjeta-secundaria {
+    margin-bottom: 15px;
+}
+
+.resto-noticias {
+    width: 100%;
+    margin: 20px 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.resto-noticias-item {
+    width: 25%;
+    margin: 10px;
 }

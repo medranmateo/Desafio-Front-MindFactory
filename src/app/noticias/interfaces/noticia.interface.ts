@@ -1,10 +1,10 @@
 export interface Noticia {
-    id?: number; // El ID es opcional para las nuevas noticias
+    id: number; 
     titulo: string;
     subtitulo: string;
-    imagen: string;
+    imagenUrl: string;
     contenido: string;
     autor: string;
     fecha: Date;
-    //categoria: string;
+    categoria: string;
 }
