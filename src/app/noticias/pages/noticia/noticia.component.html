@@ -22,25 +22,15 @@
             </mat-card-content>
 
             <mat-card-actions>
-                <button mat-button class="btn-editar">  
+                <button mat-button class="btn-editar" (click)="editarNoticia()">  
                     <mat-icon>edit</mat-icon> Editar
                 </button>
-                <button mat-button class="btn-eliminar">
+                <button mat-button class="btn-eliminar" (click)="eliminarNoticia()">
                     <mat-icon>delete</mat-icon> Eliminar
                 </button>
             </mat-card-actions>
 
-            <!-- <mat-card-footer>
-                <span>Autor: {{ noticia?.autor }}</span>
-                <span class="fecha">Fecha: {{ noticia?.fecha | date: 'dd/MM/yyyy' }}</span>
-                <span>Categoría: {{ noticia?.categoria }}</span>
-            </mat-card-footer> -->
         </mat-card>
     </div>
-
-    <div class="no-existe" *ngIf="!noticia">
-        <p>Noticia no encontrada.</p>
-    </div>
-
 
 </div>
