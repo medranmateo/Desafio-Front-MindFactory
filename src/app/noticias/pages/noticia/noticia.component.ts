@@ -15,6 +15,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class NoticiaComponent implements OnInit {
 
   noticia: Noticia | null = null;
+  cargando: boolean = true;
 
   constructor(
     private noticiaService: NoticiasService,
@@ -34,7 +35,10 @@ export class NoticiaComponent implements OnInit {
           if (noticia) {
             this.noticia = noticia;
             console.log('Noticia obtenida:', this.noticia);
+            this.cargando = false;
           } else {
+            console.error('Noticia no encontrada');
+            this.cargando = false;
             //this.router.navigate(['../home'], { relativeTo: this.activatedRoute });
           }
         });

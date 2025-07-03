@@ -12,6 +12,9 @@ import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 import { NoticiaComponent } from './pages/noticia/noticia.component';
 import { NoticiaTarjetaComponent } from './components/noticia-tarjeta/noticia-tarjeta.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { CategoriaNoticiaComponent } from './pages/categoria-noticia/categoria-noticia.component';
+import { CategoriaTarjetaComponent } from './components/categoria-tarjeta/categoria-tarjeta.component';
 
 
 
@@ -22,7 +25,10 @@ import { HomeComponent } from './pages/home/home.component';
     HomeComponent,
     ListadoNoticiasComponent,
     ConfirmarComponent,
-    NoticiaTarjetaComponent
+    NoticiaTarjetaComponent,
+    SpinnerComponent,
+    CategoriaNoticiaComponent,
+    CategoriaTarjetaComponent
   ],
   imports: [
     CommonModule,

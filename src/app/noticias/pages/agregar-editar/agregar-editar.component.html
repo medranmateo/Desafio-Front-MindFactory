@@ -1,10 +1,12 @@
+<app-spinner *ngIf="cargando"></app-spinner>
+
 <div class="agregar-editar">
 
     <button mat-button routerLink="./home">
         <mat-icon>home</mat-icon> Inicio
     </button>
 
-    <h2 class="titulo"> 
+    <h2 class="titulo">
         {{ noticia._id ? 'Editar' : 'Agregar' }} Noticia
     </h2>
 
@@ -32,21 +34,30 @@
         <mat-form-field>
             <mat-label>Autor</mat-label>
             <input matInput [(ngModel)]="noticia.autor" name="autor" required>
-        </mat-form-field>  
-        
+        </mat-form-field>
+
         <!-- <mat-form-field>
             <mat-label>Fecha</mat-label>
             <input matInput [(ngModel)]="noticia.fecha" name="fecha" type="date" required>
         </mat-form-field> -->
 
-        <mat-form-field>
+        <!-- <mat-form-field>
             <mat-label>Categoría</mat-label>
             <input matInput [(ngModel)]="noticia.categoria" name="categoria" required>
+        </mat-form-field> -->
+
+        <mat-form-field>
+            <mat-label>Categoría</mat-label>
+            <mat-select [(ngModel)]="noticia.categoria" name="categoria" required>
+                <mat-option *ngFor="let cat of categorias" [value]="cat">
+                    {{ cat }}
+                </mat-option>
+            </mat-select>
         </mat-form-field>
 
-        <button mat-raised-button color="primary" type="submit"> {{ noticia._id ? 'Actualizar' : 'Crear Noticia' }} </button>
+
+        <button mat-raised-button color="primary" type="submit"> {{ noticia._id ? 'Actualizar' : 'Crear Noticia' }}
+        </button>
     </form>
 
 </div>
-
-

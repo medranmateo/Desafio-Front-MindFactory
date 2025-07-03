@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AgregarEditarComponent } from './pages/agregar-editar/agregar-editar.component';
 import { NoticiaComponent } from './pages/noticia/noticia.component';
 import { ListadoNoticiasComponent } from './pages/listado-noticias/listado-noticias.component';
+import { CategoriaNoticiaComponent } from './pages/categoria-noticia/categoria-noticia.component';
 
 
 const rutas: Routes = [
@@ -15,6 +16,7 @@ const rutas: Routes = [
       { path: 'agregar', component: AgregarEditarComponent },
       { path: 'editar/:id', component: AgregarEditarComponent },
       { path: 'noticia/:id', component: NoticiaComponent },
+      { path: 'categoria/:categoria', component: CategoriaNoticiaComponent },
       { path: '**', redirectTo: 'home' }
     ]
   }

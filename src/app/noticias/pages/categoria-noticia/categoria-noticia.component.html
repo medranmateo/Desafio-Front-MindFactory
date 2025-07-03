@@ -1,0 +1,17 @@
+<app-spinner *ngIf="cargando"></app-spinner>
+
+<div class="categoria-noticia-container">
+    <button mat-button routerLink="./home">
+        <mat-icon>home</mat-icon> Inicio
+    </button>
+    
+    <h1 class="titulo"> {{categoria}} </h1>
+
+    <p *ngIf="!noticias || noticias.length === 0">No hay noticias de {{categoria}}</p>
+
+    <div class="categoria-noticias" *ngIf="noticias && noticias.length > 0">
+        <div class="categoria-tarjeta" *ngFor="let noticia of noticias">
+            <app-categoria-tarjeta [noticia]="noticia" (clickTarjeta)="verDetalle($event)"></app-categoria-tarjeta>
+        </div>
+    </div>
+</div>

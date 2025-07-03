@@ -1,9 +1,12 @@
+<app-spinner *ngIf="cargando"></app-spinner>
+
 <div class="listado-noticias-container">
     <div class="listado-noticias">
     
         <div class="principal">
 
             <div class="noticia-principal" (click)="verDetalle(principal?._id)">
+                <p class="categoria-txt"><small> {{principal?.categoria}} </small> </p>
                 <h1 class="titulo"> {{principal?.titulo}} </h1>
 
                 <span><img src="{{principal?.imagenUrl}}" alt="" class="principal-imagen"></span>
@@ -26,7 +29,7 @@
     
     <div class="resto-noticias">
         <div *ngFor="let item of restoNoticias" class="resto-noticias-item">
-            <app-noticia-tarjeta [noticia]="item" (clickTarjeta)="verDetalle($event)"></app-noticia-tarjeta>
+            <app-categoria-tarjeta [noticia]="item" (clickTarjeta)="verDetalle($event)"></app-categoria-tarjeta>
         </div>
     </div>
 

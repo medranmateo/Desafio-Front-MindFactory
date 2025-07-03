@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+
+  categorias: string[] = ['Politica', 'Deportes', 'Tecnologia', 'Economia', 'Internacional'];
+
   constructor() { }
 
   ngOnInit(): void {

@@ -15,6 +15,7 @@ export class ListadoNoticiasComponent implements OnInit {
   principal: Noticia | null = null;
   secundarias: Noticia[] = [];
   restoNoticias: Noticia[] = [];
+  cargando: boolean = true;
 
   constructor(
     private noticiasService: NoticiasService,
@@ -30,6 +31,7 @@ export class ListadoNoticiasComponent implements OnInit {
       this.secundarias = noticias.slice(1, 4); // Tomamos las siguientes 3 noticias como secundarias
       this.restoNoticias = noticias.slice(4); // El resto de las noticias
       console.log('Noticias obtenidas:', this.noticias);
+      this.cargando = false;
     });
 
     

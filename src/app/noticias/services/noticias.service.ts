@@ -87,5 +87,9 @@ export class NoticiasService {
     return this.http.delete<any>(`${this.baseUrl}${noticia._id}`);
   }
 
+  obtenerPorCategoria(categoria: string): Observable<Noticia[]> {
+    console.log('Obteniendo noticias por categoría:', categoria);
+    return this.http.get<Noticia[]>(`${this.baseUrl}categoria/${categoria}`);
+  }
 
 }

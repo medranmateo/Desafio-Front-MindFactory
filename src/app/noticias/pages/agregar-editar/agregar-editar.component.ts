@@ -14,6 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AgregarEditarComponent implements OnInit, AfterViewInit {
 
+  cargando: boolean = true;
 
   noticia: Noticia = {
     titulo: '',
@@ -24,6 +25,9 @@ export class AgregarEditarComponent implements OnInit, AfterViewInit {
     //fecha: new Date(),
     categoria: ''
   };
+
+  categorias: string[] = ['Politica', 'Deportes', 'Tecnologia', 'Economia', 'Internacional'];
+
 
   constructor(
     private router: Router,
@@ -36,6 +40,7 @@ export class AgregarEditarComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     console.log('Iniciando edición de noticia...', this.router.url);
     if(!this.router.url.includes('editar')) {
+      this.cargando = false;
       return;
     }
     this.activatedRoute.params
@@ -46,6 +51,7 @@ export class AgregarEditarComponent implements OnInit, AfterViewInit {
       console.log('Noticia obtenida:', noticia);
       if (noticia?._id) {
         this.noticia = noticia;
+        this.cargando = false;
       } else {
         this.router.navigate(['../home'], { relativeTo: this.activatedRoute });
       }
