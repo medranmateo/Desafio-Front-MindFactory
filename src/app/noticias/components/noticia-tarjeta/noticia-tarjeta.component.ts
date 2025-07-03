@@ -10,7 +10,7 @@ export class NoticiaTarjetaComponent implements OnInit {
 
   @Input() noticia!: Noticia;
 
-  @Output() clickTarjeta = new EventEmitter<number>();
+  @Output() clickTarjeta = new EventEmitter<string>();
 
   constructor() { }
   
@@ -18,7 +18,8 @@ export class NoticiaTarjetaComponent implements OnInit {
   }
   
   onClick() {
-    this.clickTarjeta.emit(this.noticia.id);
+    console.log('Noticia seleccionada:', this.noticia);
+    this.clickTarjeta.emit(this.noticia._id);
   }
 
 

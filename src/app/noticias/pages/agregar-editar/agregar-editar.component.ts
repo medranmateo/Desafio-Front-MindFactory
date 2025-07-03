@@ -16,13 +16,12 @@ export class AgregarEditarComponent implements OnInit, AfterViewInit {
 
 
   noticia: Noticia = {
-    id: 0,
     titulo: '',
     subtitulo: '',
     contenido: '',
     imagenUrl: '',
     autor: '',
-    fecha: new Date(),
+    //fecha: new Date(),
     categoria: ''
   };
 
@@ -45,7 +44,7 @@ export class AgregarEditarComponent implements OnInit, AfterViewInit {
     )
     .subscribe(noticia => {
       console.log('Noticia obtenida:', noticia);
-      if (noticia?.id) {
+      if (noticia?._id) {
         this.noticia = noticia;
       } else {
         this.router.navigate(['../home'], { relativeTo: this.activatedRoute });
@@ -59,7 +58,8 @@ export class AgregarEditarComponent implements OnInit, AfterViewInit {
 
   guardarNoticia(){
     console.log('Guardando noticia:', this.noticia);
-    if (this.noticia.id) {
+    if (this.noticia._id) {
+      console.log('Actualizando noticia con ID:', this.noticia._id);
       this.noticiaService.actualizarNoticia(this.noticia).subscribe(() => {
         this.router.navigate(['../../home'], { relativeTo: this.activatedRoute });
         this.mostrarSnakbar('Noticia actualizada correctamente');

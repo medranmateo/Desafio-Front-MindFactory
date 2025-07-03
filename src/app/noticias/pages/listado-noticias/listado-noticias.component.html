@@ -2,16 +2,14 @@
     <div class="listado-noticias">
     
         <div class="principal">
-            <mat-card (click)="verDetalle(principal?.id || 0)" >
-                <mat-card-header>
-                    <mat-card-title> {{ principal?.titulo || ' ' }} </mat-card-title>
-                </mat-card-header>
-    
-                <img mat-card-image [src]="principal?.imagenUrl" alt="">
-    
-                <mat-card-subtitle>{{ principal?.subtitulo || ' ' }}</mat-card-subtitle>
-    
-            </mat-card>
+
+            <div class="noticia-principal" (click)="verDetalle(principal?._id)">
+                <h1 class="titulo"> {{principal?.titulo}} </h1>
+
+                <span><img src="{{principal?.imagenUrl}}" alt="" class="principal-imagen"></span>
+                <p> {{principal?.subtitulo}} </p>
+
+            </div>
             
         </div>
     
@@ -21,9 +19,10 @@
             </div>
         </div>
     
-        <mat-divider></mat-divider>
     
     </div>
+
+    <hr>
     
     <div class="resto-noticias">
         <div *ngFor="let item of restoNoticias" class="resto-noticias-item">

@@ -5,7 +5,7 @@
     </button>
 
     <h2 class="titulo"> 
-        {{ noticia.id ? 'Editar' : 'Agregar' }} Noticia
+        {{ noticia._id ? 'Editar' : 'Agregar' }} Noticia
     </h2>
 
     <form class="noticia-form" #noticiaForm="ngForm" (ngSubmit)="guardarNoticia()">
@@ -34,17 +34,17 @@
             <input matInput [(ngModel)]="noticia.autor" name="autor" required>
         </mat-form-field>  
         
-        <mat-form-field>
+        <!-- <mat-form-field>
             <mat-label>Fecha</mat-label>
             <input matInput [(ngModel)]="noticia.fecha" name="fecha" type="date" required>
-        </mat-form-field>
+        </mat-form-field> -->
 
         <mat-form-field>
             <mat-label>Categoría</mat-label>
             <input matInput [(ngModel)]="noticia.categoria" name="categoria" required>
         </mat-form-field>
 
-        <button mat-raised-button color="primary" type="submit"> {{ noticia.id ? 'Actualizar' : 'Crear Noticia' }} </button>
+        <button mat-raised-button color="primary" type="submit"> {{ noticia._id ? 'Actualizar' : 'Crear Noticia' }} </button>
     </form>
 
 </div>

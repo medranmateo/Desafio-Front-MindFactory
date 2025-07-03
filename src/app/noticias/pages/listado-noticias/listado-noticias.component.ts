@@ -36,8 +36,9 @@ export class ListadoNoticiasComponent implements OnInit {
   }
 
 
-  verDetalle(id: number) {
-    if(id <= 0) {
+  verDetalle(id: any) {
+    console.log('ID recibido:', id);
+    if(!id) {
       return;
     }
     console.log('Ver detalle de la noticia con ID:', id);

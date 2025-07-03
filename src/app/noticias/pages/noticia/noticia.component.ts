@@ -41,31 +41,29 @@ export class NoticiaComponent implements OnInit {
   }
 
   editarNoticia() {
-    this.router.navigate(['../../editar', this.noticia?.id], { relativeTo: this.activatedRoute });
+    this.router.navigate(['../../editar', this.noticia?._id], { relativeTo: this.activatedRoute });
     // if (this.noticia && this.noticia.id) {
     // }
   }
 
   eliminarNoticia() {
-    if (this.noticia && this.noticia.id) {
-      this.noticiaService.eliminarNoticia(this.noticia.id).subscribe(() => {
-
-        this.dialog.open(ConfirmarComponent,{
+    if (this.noticia && this.noticia._id) {
+      this.dialog.open(ConfirmarComponent,{
           data: this.noticia,
           width: '400px',
           disableClose: true,
           autoFocus: false
         }).afterClosed().subscribe(result => {
           if (result) {
-            console.log('Noticia eliminada:', this.noticia);
-            this.router.navigate(['../../home'], { relativeTo: this.activatedRoute });
-            this.mostrarSnakbar('Noticia eliminada correctamente');
+            this.noticiaService.eliminarNoticia(this.noticia!).subscribe(() => {
+              console.log('Noticia eliminada:', this.noticia);
+              this.router.navigate(['../../home'], { relativeTo: this.activatedRoute });
+              this.mostrarSnakbar('Noticia eliminada correctamente');
+            });
           } else {
             console.log('Eliminación cancelada');
           }
         })
-
-      });
     }
   }
 

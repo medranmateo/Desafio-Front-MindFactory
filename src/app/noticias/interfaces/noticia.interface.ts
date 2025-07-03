@@ -1,10 +1,10 @@
 export interface Noticia {
-    id: number; 
+    _id?: string; 
     titulo: string;
     subtitulo: string;
     imagenUrl: string;
     contenido: string;
     autor: string;
-    fecha: Date;
+    fecha?: Date;
     categoria: string;
 }
