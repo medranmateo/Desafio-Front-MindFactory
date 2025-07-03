@@ -7,6 +7,9 @@ export const environment = {
   baseUrl: 'http://localhost:5000/api/noticias/'
 };
 
+// api en node js
+// https://github.com/medranmateo/Backend-Mindfactory
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
